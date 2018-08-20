@@ -33,6 +33,6 @@ export default StyleSheet.create({
     position: 'absolute',
     right: 10,
     top: 10,
-    zIndex: 999
+    // zIndex: 999
   }
 });

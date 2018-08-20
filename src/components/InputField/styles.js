@@ -28,5 +28,11 @@ export default StyleSheet.create({
   showButtonText: {
     color: colors.white,
     fontWeight: '700',
+  },
+
+  checkMarkWrapper: {
+    position: 'absolute',
+    right: 0,
+    bottom: 12,
   }
 });

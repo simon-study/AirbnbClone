@@ -12,7 +12,7 @@ const NextArrowButton = (props) => {
     disabled,
   } = props;
 
-  const opacityStyle = disabled ? { backgroundColor: 'rgba(255,255,255,0.2)' } : { backgroundColor: 'rgba(255,255,255,0.6)' };
+  const opacityStyle = disabled ? { backgroundColor: 'rgba(255,255,255,0.6)' } : { backgroundColor: 'rgba(255,255,255,0.2)' };
 
   return (
     <TouchableHighlight style={[opacityStyle, styles.wrapper]} onPress={onPress}>

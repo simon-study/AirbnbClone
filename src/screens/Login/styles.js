@@ -30,4 +30,11 @@ export default StyleSheet.create({
     right: 20,
     bottom: 20,
   },
+
+  notificationWrapper: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+  }
 });

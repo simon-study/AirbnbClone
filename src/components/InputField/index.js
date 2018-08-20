@@ -5,16 +5,19 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
+  Animated,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import colors from 'colors';
+import Icon from 'react-native-vector-icons/dist/FontAwesome';
 import styles from './styles';
 
 export default class InputField extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      secureInput: props.inputType === 'text' || props.inputType === 'email' ? false : true
+      secureInput: props.inputType === 'text' || props.inputType === 'email' ? false : true,
+      
     }
   }
 
@@ -34,6 +37,7 @@ export default class InputField extends Component {
       inputType,
       customStyle,
       typeOfKeyboard,
+      onChangeText,
     } = this.props;
 
     const { secureInput } = this.state;
@@ -52,12 +56,22 @@ export default class InputField extends Component {
             <Text style={styles.showButtonText}>{secureInput ? 'Show' : 'Hide'}</Text>
           </TouchableOpacity> : null
         }
+
+        <Animated.View style={[styles.checkMarkWrapper]}>
+          <Icon
+            name="check"
+            size={20}
+            color={colors.white}
+          />
+        </Animated.View>
+
         <TextInput
           autoCorrect={false}
           style={[{color: inputColor, borderBottomColor: borderBottom}, styles.input]}
           underlineColorAndroid="transparent"
           secureTextEntry={secureInput}
           keyboardType={keyboardType}
+          onChangeText={onChangeText}
         />
       </View>
     )
@@ -67,4 +81,5 @@ export default class InputField extends Component {
 InputField.propTypes = {
   labelText: PropTypes.string,
   labelColor: PropTypes.string,
+  onChangeText: PropTypes.func,
 }
